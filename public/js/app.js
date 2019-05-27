@@ -113,7 +113,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     namea: 'bnbnbnb'
-  }
+  },
+  data: function data() {}
 });
 
 /***/ }),
@@ -132,6 +133,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+var trans = __webpack_require__(/*! ../lang/lang */ "./resources/js/assets/lang/lang.js");
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     var title_el = document.querySelector("title");
@@ -141,6 +144,11 @@ __webpack_require__.r(__webpack_exports__);
     handleClick: function handleClick() {
       console.log(this.name);
     }
+  },
+  data: function data() {
+    return {
+      trans: trans('de')
+    };
   }
 });
 
@@ -664,7 +672,7 @@ var render = function() {
       "p",
       [
         _c("router-link", { attrs: { to: { name: "home" } } }, [
-          _vm._v(_vm._s(_vm.namea))
+          _vm._v("Home")
         ]),
         _vm._v(" |\n        "),
         _c("router-link", { attrs: { to: { name: "hello" } } }, [
@@ -699,16 +707,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [_c("p", [_vm._v(_vm._s(_vm.trans.cat))])])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("p", [_vm._v("Hello World! ")])])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -15596,6 +15597,86 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 
 /***/ }),
 
+/***/ "./resources/js/assets/lang sync recursive ^\\.\\/.*\\.json$":
+/*!******************************************************!*\
+  !*** ./resources/js/assets/lang sync ^\.\/.*\.json$ ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./de.json": "./resources/js/assets/lang/de.json",
+	"./en.json": "./resources/js/assets/lang/en.json"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./resources/js/assets/lang sync recursive ^\\.\\/.*\\.json$";
+
+/***/ }),
+
+/***/ "./resources/js/assets/lang/de.json":
+/*!******************************************!*\
+  !*** ./resources/js/assets/lang/de.json ***!
+  \******************************************/
+/*! exports provided: cat, dog, default */
+/***/ (function(module) {
+
+module.exports = {"cat":"Katze","dog":"Hund"};
+
+/***/ }),
+
+/***/ "./resources/js/assets/lang/en.json":
+/*!******************************************!*\
+  !*** ./resources/js/assets/lang/en.json ***!
+  \******************************************/
+/*! exports provided: cat, dog, default */
+/***/ (function(module) {
+
+module.exports = {"cat":"cat","dog":"dog"};
+
+/***/ }),
+
+/***/ "./resources/js/assets/lang/lang.js":
+/*!******************************************!*\
+  !*** ./resources/js/assets/lang/lang.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var json = __webpack_require__(/*! ./../lang/en.json */ "./resources/js/assets/lang/en.json");
+
+function trans() {
+  var lang = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'en';
+
+  try {
+    // json = require(`/de.json`);
+    json = __webpack_require__("./resources/js/assets/lang sync recursive ^\\.\\/.*\\.json$")("./".concat(lang, ".json"));
+  } catch (e) {}
+
+  return json;
+}
+
+module.exports = trans;
+
+/***/ }),
+
 /***/ "./resources/js/assets/views/App.vue":
 /*!*******************************************!*\
   !*** ./resources/js/assets/views/App.vue ***!
@@ -15821,8 +15902,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/vue/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/vue/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/html/vue-boilerapplate/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/html/vue-boilerapplate/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

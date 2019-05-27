@@ -1,9 +1,11 @@
 <template>
    <div>
-       <p>Hello World! </p>
+       <p>{{ trans.cat }}</p>
    </div>
 </template>
 <script>
+
+    let trans = require('../lang/lang');
     export default {
 
         mounted() {
@@ -16,6 +18,15 @@
             handleClick: function() {
                 console.log(this.name)
             }
+        },
+        data() {
+
+            return {
+
+               trans: trans('de')
+
+            }
+
         }
     }
 </script>

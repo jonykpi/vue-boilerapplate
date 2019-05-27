@@ -3,7 +3,7 @@
 
 
         <p>
-            <router-link :to="{ name: 'home' }">{{namea}}</router-link> |
+            <router-link :to="{ name: 'home' }">Home</router-link> |
             <router-link :to="{ name: 'hello' }">Hello World</router-link>
         </p>
 
@@ -18,6 +18,9 @@
     export default {
         props: {
             namea: 'bnbnbnb',
+        },
+        data(){
+
         }
     }
 
